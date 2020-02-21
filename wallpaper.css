@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+   background-color: #333639;
+   font-size: 62.5%;
+}
+
+body {
+  /* background-image: url(./img/canal-grande.jpg); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: color;
+  color: aliceblue;
+  margin: 0;
+  transition: background 0.5s ease-in-out;
+}
+
+.bg-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1111111e;
+  background-color: #1111116b;
+  background-color: #11111133;
+}
+
+.time {
+  /* display: flex;
+  justify-content: center; */
+  /* max-width: 50%; */
+  text-align: center;
+  padding: 10rem;
+}
+
+.digitime {
+  font-size: 15rem;
+}
+
+.date {
+  font-size: 6rem;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5rem;
+  align-items: center;
+
+}
+
+.humidity-img {
+  width: 7%;
+}
+
+#icon {
+  width: 10rem;
+}
+
+#Layer_1 {
+  fill: aliceblue;
+}
+
+.city-humidity {
+  padding: 0 2rem;
+}
+
+.city {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.temp {
+  font-size: xx-large;
+  font-weight: 100;
+}
+
+.greeting{
+  font-size: 3rem;
+  padding: 2rem;
+}
+
+.quotes {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.9);
+  max-width: 30%;
+  padding: 0 2rem;
+  font-size: 2.2rem;
+  float: right;
+}
+
+@media screen and (max-width:76.8em) {
+  html {
+    /* font-size: 60%; */
+  }
+
+  .bg-cover > * {
+    padding: 10rem;
+  }
+
+  .digitime {
+    font-size: 10rem;
+  }
+
+    .date {
+      font-size: 4rem;
+    }
+
+    .greeting{
+      font-size: 2rem;
+      padding: 2rem;
+  }
+
+  .quotes {
+    padding: 0;
+    font-size: 1.8rem;
+  }
+
+  #icon {
+    width: 6rem;
+  }
+} 
+
+@media screen and (max-width: 42.5em) {
+  html {
+    font-size: 40%;
+  }
+
+
+}
