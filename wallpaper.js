@@ -40,13 +40,14 @@ const wallpaperBg = () => {
     "url('./img/15.jpg')",
     "url('./img/16.jpg')",
     "url('./img/17.jpg')",
+
   ];
   // craeting the random method
   let randomImg = Math.floor(Math.random() * imageArray.length);
 
   // setting up the background imgage
-   document.body.style.backgroundImage = imageArray[randomImg];
-   
+  document.body.style.backgroundImage = imageArray[randomImg];
+
 
 };
 wallpaperBg();
@@ -61,9 +62,9 @@ const clock = () => {
   const nowHour = now.getHours();
   const nowMinutes = now.getMinutes();
   const nowSeconds = now.getSeconds();
-// console.log(nowSeconds)
+  // console.log(nowSeconds)
 
-// get and display todays date in the UI
+  // get and display todays date in the UI
   const theDate = now.toDateString();
   // console.log(theDate)
   todaysDate.innerHTML = `<span>${theDate}</span>`;
@@ -75,8 +76,8 @@ const clock = () => {
 
   `;
 
-   let greeting = nowHour < 12 ? 'Good Morning Soja' : nowHour < 18 ? 'Good Afternoon Soja' : 'Good Evening Soja';
-   greetings.innerHTML = `<span>${greeting}</span>`
+  let greeting = nowHour < 12 ? 'Good Morning Soja' : nowHour < 18 ? 'Good Afternoon Soja' : 'Good Evening Soja';
+  greetings.innerHTML = `<span>${greeting}</span>`
 };
 clock();
 setInterval(clock, 1000)
@@ -104,10 +105,10 @@ const getWeather = async (id) => {
 
 
 // making api call to get the city we want weather info 
-const getCity = async() => {
+const getCity = async () => {
   const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
   const query = `?apikey=${key}&q=${'oslo'}`;
-  
+
   const response = await fetch(base + query);
   const data = await response.json();
   return data[0];
@@ -121,7 +122,7 @@ getCity().then(data => {
 
 
 
-  
+
 
 // putting out the datas for both city and weather requests
 const updateCity = async () => {
@@ -135,22 +136,22 @@ const updateCity = async () => {
   humidity.innerHTML = `${weather.WeatherText}`;
   temp.innerHTML = `${weather.Temperature.Metric.Value}`
 
-  
+
 }
 updateCity('oslo');
 
 
-function getQuotes () {
+function getQuotes() {
   fetch("https://type.fit/api/quotes")
-  .then(response =>  {return response.json()})
-  .then((data) => {
-    let randomQuotes = Math.floor(Math.random() * data.length);
-    // console.log(data[randomQuotes].text);
-    inspQuotes.innerHTML = `
+    .then(response => { return response.json() })
+    .then((data) => {
+      let randomQuotes = Math.floor(Math.random() * data.length);
+      // console.log(data[randomQuotes].text);
+      inspQuotes.innerHTML = `
       <span>${data[randomQuotes].text}</span>
     `
-    inspQuotes.addEventListener('click', getQuotes)
-  })
+      inspQuotes.addEventListener('click', getQuotes)
+    })
 }
 setInterval(getQuotes, 60000)
 getQuotes();
